@@ -1,0 +1,61 @@
+name: "Submit a Project"
+description: "Submit an AI agent project for review on claw4science.org"
+title: "[Project] "
+labels: ["project", "pending-review"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Project Name
+      placeholder: e.g., ScienceClaw
+    validations:
+      required: true
+  - type: input
+    id: github
+    attributes:
+      label: GitHub URL
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Core Platform & Lightweight Variants
+        - Team & Evolution
+        - Science & Research (Claw Ecosystem)
+        - Education
+        - Bioinformatics & Omics
+        - Drug Discovery & Molecular
+        - General Research Agents
+        - Specialized Science
+        - Other (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "1-3 sentences about what this project does"
+      placeholder: "A brief description of the project..."
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why should we include it?
+      description: "What makes this project relevant to scientific research?"
+      placeholder: "e.g., Published in Nature Methods, 500+ stars, actively maintained..."
+    validations:
+      required: true
+  - type: input
+    id: homepage
+    attributes:
+      label: Homepage / Website (optional)
+      placeholder: https://example.com
+  - type: input
+    id: paper
+    attributes:
+      label: Paper URL (optional)
+      placeholder: https://arxiv.org/abs/...
