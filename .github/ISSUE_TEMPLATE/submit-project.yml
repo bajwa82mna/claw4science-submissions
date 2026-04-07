@@ -1,5 +1,5 @@
 name: "Submit a Project"
-description: "Submit an AI agent project for review on claw4science.org"
+description: "Submit an AI agent project for review on claw4science.campusinchina.com"
 title: "[Project] "
 labels: ["project", "pending-review"]
 body:
