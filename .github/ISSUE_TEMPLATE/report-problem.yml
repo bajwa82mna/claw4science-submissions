@@ -1,29 +1,53 @@
-name: "Feedback / Bug Report"
-description: "Report an issue or suggest an improvement for claw4science.campusinchina.com"
-title: "[Feedback] "
-labels: ["feedback"]
+name: "🐛 Report a Problem"
+description: "Report a broken link, misleading description, wrong status label, or other directory issue."
+title: "[Report] <Project Name> — <brief issue>"
+labels: ["bug", "pending-review"]
+assignees:
+  - bajwa82mna
+
 body:
-  - type: dropdown
-    id: type
+  - type: markdown
     attributes:
-      label: Type
-      options:
-        - Incorrect project information
-        - Missing project
-        - Website bug
-        - Feature suggestion
-        - Other
-    validations:
-      required: true
-  - type: textarea
-    id: details
-    attributes:
-      label: Details
-      description: "Please describe the issue or suggestion"
-    validations:
-      required: true
+      value: |
+        ## Report a Problem
+        Use this to flag broken links, wrong info, misleading labels, or projects that should be removed from [claw4science.campusinchina.com](https://claw4science.campusinchina.com).
+
   - type: input
-    id: url
+    id: project-name
     attributes:
-      label: Related URL (optional)
-      placeholder: https://claw4science.campusinchina.com/...
+      label: "Project Name (if applicable)"
+      placeholder: "e.g. DrugClaw"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: problem-type
+    attributes:
+      label: "Problem Type"
+      options:
+        - "Broken GitHub link"
+        - "Broken website / paper link"
+        - "Project description is misleading"
+        - "Project should be removed (abandoned / deleted)"
+        - "Duplicate listing"
+        - "Status label is wrong"
+        - "Wrong programming language shown"
+        - "Site bug / display issue"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the Problem"
+      description: "Be specific — include URLs, screenshots, or expected vs. actual."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: "Suggested Fix (optional)"
+    validations:
+      required: false
