@@ -1,43 +1,70 @@
-name: "Submit a Skill Hub"
-description: "Submit a skill library or registry for review on claw4science.campusinchina.com"
-title: "[Skill Hub] "
-labels: ["skill-hub", "pending-review"]
+name: "✏️ Update an Existing Listing"
+description: "Correct or update information for a project already in the directory."
+title: "[Update] <Project Name>"
+labels: ["update", "pending-review"]
+assignees:
+  - bajwa82mna
+
 body:
-  - type: input
-    id: name
+  - type: markdown
     attributes:
-      label: Skill Hub Name
-      placeholder: e.g., K-Dense Scientific Skills
+      value: |
+        ## Update an Existing Listing
+        Use this to report outdated info, wrong descriptions, broken links, or status changes for a project already on [claw4science.campusinchina.com](https://claw4science.campusinchina.com).
+
+  - type: input
+    id: project-name
+    attributes:
+      label: "Project Name"
+      placeholder: "e.g. ClawBio"
     validations:
       required: true
+
   - type: input
-    id: github
+    id: github-url
     attributes:
-      label: GitHub URL or Website
-      placeholder: https://github.com/owner/repo
+      label: "GitHub Repository URL"
+      placeholder: "https://github.com/org/repo"
     validations:
       required: true
+
   - type: dropdown
-    id: category
+    id: update-type
     attributes:
-      label: Category
+      label: "Type of Update"
       options:
-        - Official Registry
-        - Scientific & Research Skills
-        - Medical & Biomedical Skills
-        - Research & Domain-Specific
-        - General Collection
+        - "Description is inaccurate or outdated"
+        - "Wrong category"
+        - "Missing or wrong tags"
+        - "Star count significantly outdated"
+        - "Project has been renamed or moved"
+        - "Project is now archived / abandoned"
+        - "New website or paper link"
+        - "Status change (Active → Stale, etc.)"
+        - "Other"
     validations:
       required: true
-  - type: input
-    id: skill_count
-    attributes:
-      label: Approximate number of skills
-      placeholder: e.g., 170+
+
   - type: textarea
-    id: description
+    id: current-info
     attributes:
-      label: Description
-      description: "What does this skill library cover?"
+      label: "Current (Incorrect) Information"
+      description: "Paste what the directory currently shows."
     validations:
       required: true
+
+  - type: textarea
+    id: correct-info
+    attributes:
+      label: "Correct / Updated Information"
+      description: "What should it say instead?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: "Source / Evidence (optional)"
+      description: "Link confirming the update — GitHub release notes, repo README, etc."
+    validations:
+      required: false
