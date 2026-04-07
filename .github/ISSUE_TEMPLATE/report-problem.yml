@@ -1,0 +1,29 @@
+name: "Feedback / Bug Report"
+description: "Report an issue or suggest an improvement for claw4science.campusinchina.com"
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - Incorrect project information
+        - Missing project
+        - Website bug
+        - Feature suggestion
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: "Please describe the issue or suggestion"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Related URL (optional)
+      placeholder: https://claw4science.campusinchina.com/...
