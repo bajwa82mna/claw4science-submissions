@@ -1,1 +1,9 @@
+blank_issues_enabled: false
 
+contact_links:
+  - name: 📖 Browse the Directory
+    url: https://claw4science.campusinchina.com
+    about: Browse existing projects before submitting to avoid duplicates.
+  - name: 💬 OpenClaw Community
+    url: https://github.com/openclaw/openclaw/discussions
+    about: General discussion about the OpenClaw ecosystem.
