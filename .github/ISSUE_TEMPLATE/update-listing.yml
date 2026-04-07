@@ -1,0 +1,43 @@
+name: "Submit a Skill Hub"
+description: "Submit a skill library or registry for review on claw4science.org"
+title: "[Skill Hub] "
+labels: ["skill-hub", "pending-review"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Skill Hub Name
+      placeholder: e.g., K-Dense Scientific Skills
+    validations:
+      required: true
+  - type: input
+    id: github
+    attributes:
+      label: GitHub URL or Website
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Official Registry
+        - Scientific & Research Skills
+        - Medical & Biomedical Skills
+        - Research & Domain-Specific
+        - General Collection
+    validations:
+      required: true
+  - type: input
+    id: skill_count
+    attributes:
+      label: Approximate number of skills
+      placeholder: e.g., 170+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "What does this skill library cover?"
+    validations:
+      required: true
