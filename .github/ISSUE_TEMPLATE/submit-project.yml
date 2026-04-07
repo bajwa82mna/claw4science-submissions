@@ -1,61 +1,145 @@
-name: "Submit a Project"
-description: "Submit an AI agent project for review on claw4science.campusinchina.com"
-title: "[Project] "
-labels: ["project", "pending-review"]
+name: "🚀 Submit a New Project"
+description: "Add a new OpenClaw ecosystem project to the Claw4Science directory."
+title: "[Submit] <Project Name>"
+labels: ["submission", "pending-review"]
+assignees:
+  - bajwa82mna
+
 body:
-  - type: input
-    id: name
+  - type: markdown
     attributes:
-      label: Project Name
-      placeholder: e.g., ScienceClaw
+      value: |
+        ## Submit a Project to Claw4Science
+        Thanks for contributing! Please fill in all required fields.
+        > **Before submitting:** Check [claw4science.campusinchina.com](https://claw4science.campusinchina.com) to make sure the project isn't already listed.
+
+  - type: input
+    id: project-name
+    attributes:
+      label: "Project Name"
+      description: "The exact name as it appears on GitHub."
+      placeholder: "e.g. OmicsClaw"
     validations:
       required: true
+
   - type: input
-    id: github
+    id: github-url
     attributes:
-      label: GitHub URL
-      placeholder: https://github.com/owner/repo
+      label: "GitHub Repository URL"
+      placeholder: "https://github.com/org/repo"
     validations:
       required: true
+
   - type: dropdown
     id: category
     attributes:
-      label: Category
+      label: "Category"
       options:
-        - Core Platform & Lightweight Variants
-        - Team & Evolution
-        - Science & Research (Claw Ecosystem)
-        - Education
-        - Bioinformatics & Omics
-        - Drug Discovery & Molecular
-        - General Research Agents
-        - Specialized Science
-        - Other (describe below)
+        - "Core Platform & Lightweight Variants"
+        - "Team & Orchestration"
+        - "Medical & Clinical"
+        - "Bioinformatics & Omics"
+        - "Drug Discovery & Molecular"
+        - "Autonomous End-to-End Research"
+        - "Personal Research Workbench"
+        - "Paper & Literature Tools"
+        - "Education"
+        - "Benchmarks & Evaluation"
+        - "Other / Watching List"
     validations:
       required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: "Primary Language"
+      options:
+        - "Python"
+        - "TypeScript"
+        - "JavaScript"
+        - "Rust"
+        - "Go"
+        - "Shell"
+        - "R"
+        - "Julia"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: stars
+    attributes:
+      label: "Current GitHub Stars"
+      placeholder: "e.g. 1200"
+    validations:
+      required: true
+
   - type: textarea
     id: description
     attributes:
-      label: Description
-      description: "1-3 sentences about what this project does"
-      placeholder: "A brief description of the project..."
+      label: "Project Description"
+      description: "2–4 sentences covering what it does and why it matters for research."
+      placeholder: "Describe key features, target users, and research applications..."
     validations:
       required: true
-  - type: textarea
-    id: why
-    attributes:
-      label: Why should we include it?
-      description: "What makes this project relevant to scientific research?"
-      placeholder: "e.g., Published in Nature Methods, 500+ stars, actively maintained..."
-    validations:
-      required: true
+
   - type: input
-    id: homepage
+    id: tags
     attributes:
-      label: Homepage / Website (optional)
-      placeholder: https://example.com
+      label: "Tags"
+      description: "Comma-separated, max 6, lowercase-hyphenated."
+      placeholder: "e.g. bioinformatics, RNA-seq, scRNA-seq, reproducible"
+    validations:
+      required: true
+
+  - type: input
+    id: website
+    attributes:
+      label: "Project Website (optional)"
+      placeholder: "https://project.example.com"
+    validations:
+      required: false
+
   - type: input
     id: paper
     attributes:
-      label: Paper URL (optional)
-      placeholder: https://arxiv.org/abs/...
+      label: "Associated Paper (optional)"
+      placeholder: "https://arxiv.org/abs/xxxx.xxxxx"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: maintenance
+    attributes:
+      label: "Maintenance Status"
+      options:
+        - "Active — committed within the last 30 days"
+        - "Recent — committed within the last 3 months"
+        - "Stale — no commits in 3–12 months"
+        - "Unknown"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Submission Checklist"
+      options:
+        - label: "The repository is public on GitHub."
+          required: true
+        - label: "The repository has a README describing installation and usage."
+          required: true
+        - label: "The project is open source with an identifiable license."
+          required: true
+        - label: "I checked the directory and this project is not already listed."
+          required: true
+        - label: "The project is meaningfully related to scientific research or the OpenClaw ecosystem."
+          required: true
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: "Additional Notes (optional)"
+      description: "e.g. if it's a fork, rewrite, or how it differs from similar listed projects."
+    validations:
+      required: false
